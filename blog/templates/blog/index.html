@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
     {% block content %}
         {% for post in posts %}
-            <h1>{{ post.title}}</h1>
+            <h1> <a href="{% url 'post-detail' post.pk %}" >{{ post.title}}</a></h1>
             <img class='rounded-circle article-img' src='{{ post.author.profile.image.url }}'>
 		    <p>By {{ post.author }} on {{ post.date_posted | date:"F d, Y" }}</p>
 		    <p>{{ post.content }}</p>
